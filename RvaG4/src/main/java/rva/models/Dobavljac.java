@@ -3,6 +3,9 @@ package rva.models;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,7 +30,8 @@ public class Dobavljac implements Serializable {
 	private String kontakt;
 	private String adresa;
 	
-	@OneToMany(mappedBy = "dobavljac")
+	@OneToMany(mappedBy = "dobavljac", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<Porudzbina> porudzbine;
 
 	public Dobavljac() {
@@ -72,5 +76,15 @@ public class Dobavljac implements Serializable {
 	public void setAdresa(String adresa) {
 		this.adresa = adresa;
 	}
+
+	public List<Porudzbina> getPorudzbine() {
+		return porudzbine;
+	}
+
+	public void setPorudzbine(List<Porudzbina> porudzbine) {
+		this.porudzbine = porudzbine;
+	}
+	
+	
 
 }

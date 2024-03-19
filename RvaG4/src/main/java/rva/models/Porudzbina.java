@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +34,8 @@ public class Porudzbina implements Serializable {
 	private double iznos;
 	private boolean placeno;
 	
-	@OneToMany(mappedBy = "porudzbina")
+	@OneToMany(mappedBy = "porudzbina", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<StavkaPorudzbine> stavke;
 	
 	@ManyToOne
@@ -89,5 +93,22 @@ public class Porudzbina implements Serializable {
 	public void setPlaceno(boolean placeno) {
 		this.placeno = placeno;
 	}
+
+	public List<StavkaPorudzbine> getStavke() {
+		return stavke;
+	}
+
+	public void setStavke(List<StavkaPorudzbine> stavke) {
+		this.stavke = stavke;
+	}
+
+	public Dobavljac getDobavljac() {
+		return dobavljac;
+	}
+
+	public void setDobavljac(Dobavljac dobavljac) {
+		this.dobavljac = dobavljac;
+	}
+	
 
 }
