@@ -41,7 +41,7 @@ public class StavkaPorudzbineController {
 		return service.getAll();
 	}
 	
-	@GetMapping("/stavkaPorudzbine/id/{id}")
+	@GetMapping("/stavka-porudzbine/id/{id}")
 	public ResponseEntity<?> getStavkaPorudzbineById(@PathVariable int id){
 		Optional<StavkaPorudzbine> stavkaPorudzbine = service.findById(id);
 		if(stavkaPorudzbine.isPresent()) {
@@ -50,7 +50,7 @@ public class StavkaPorudzbineController {
 		return ResponseEntity.status(404).body("Resource with requested ID: " + id + " does not exist!");
 	}
 	
-	@GetMapping("/stavkaPorudzbine/cena/{cena}")
+	@GetMapping("/stavka-porudzbine/cena/{cena}")
 	public ResponseEntity<?> getStavkaPorudzbinesByNaziv(@PathVariable double cena){
 		List<StavkaPorudzbine> stavkaPorudzbinei = service.getStavkasByCenaLowerThan(cena);
 		if(stavkaPorudzbinei.isEmpty()) {
@@ -59,7 +59,7 @@ public class StavkaPorudzbineController {
 		return ResponseEntity.ok(stavkaPorudzbinei);
 	}
 	
-	@PostMapping("/stavkaPorudzbine")
+	@PostMapping("/stavka-porudzbine")
 	public ResponseEntity<?> createStavkaPorudzbine(@RequestBody StavkaPorudzbine stavkaPorudzbine){
 		if(service.existsById(stavkaPorudzbine.getId())) {
 			return ResponseEntity.status(409).body("Resource already exists!");
@@ -69,7 +69,7 @@ public class StavkaPorudzbineController {
 		return ResponseEntity.created(uri).body(savedStavkaPorudzbine);
 	}
 	
-	@PutMapping("/stavkaPorudzbine/id/{id}")
+	@PutMapping("/stavka-porudzbine/id/{id}")
 	public ResponseEntity<?> updateStavkaPorudzbine(@RequestBody StavkaPorudzbine stavkaPorudzbine, @PathVariable int id){
 		Optional<StavkaPorudzbine> updatedStavkaPorudzbine = service.update(stavkaPorudzbine, id);
 		if(updatedStavkaPorudzbine.isPresent()) {
@@ -79,7 +79,7 @@ public class StavkaPorudzbineController {
 				" updated because it does not exist!");
 	}
 	
-	@DeleteMapping("/stavkaPorudzbine/id/{id}")
+	@DeleteMapping("/stavka-porudzbine/id/{id}")
 	public ResponseEntity<?> deleteStavkaPorudzbine(@PathVariable int id ){
 		if(service.existsById(id)) {
 			service.delete(id);
