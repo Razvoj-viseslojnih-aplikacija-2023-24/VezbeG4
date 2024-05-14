@@ -14,7 +14,7 @@ values (nextval('artikl_seq'),'Moja kravica sveze mleka, 1L', 'AD Imlek'),
         (nextval('artikl_seq'), 'Puding vanila', 'CENTROPROIZVOD');
         
  -- dobavljac podaci
- insert into dobavljac
+ insert into dobavljac (id, naziv, adresa, kontakt)
  values (nextval('dobavljac_seq'), 'AD Imlek', 'Industrijska zona bb, Beograd', '+38165426366'),
  	(nextval('dobavljac_seq'), 'Henkel Srbija', 'Industrijska zona 55, Novi Sad', '+3814569523'),
     (nextval('dobavljac_seq'), 'Fruit DOO', 'Futoska bb', '+3814455566'),

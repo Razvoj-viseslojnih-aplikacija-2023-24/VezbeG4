@@ -1,15 +1,15 @@
 <mat-toolbar color="accent">
     <span class="title-center">Artikl</span>
   </mat-toolbar>
-  
+
   <div class="container mat-elavation-z8">
     <mat-table [dataSource]="dataSource" class="mat-cell">
-      <!--ID-->
+      <!--Naziv-->
       <ng-container matColumnDef="naziv">
         <mat-header-cell *matHeaderCellDef>NAZIV</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.naziv }}</mat-cell>
       </ng-container>
-      <!--Naziv-->
+      <!--ID-->
       <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
