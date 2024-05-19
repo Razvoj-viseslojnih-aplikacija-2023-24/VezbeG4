@@ -32,6 +32,8 @@ import { MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { PorudzbinaDialogComponent } from './components/dialogs/porudzbina-dialog/porudzbina-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DobavljacDialogComponent } from './components/dialogs/dobavljac-dialog/dobavljac-dialog.component';
+import { StavkaPorudzbineDialogComponent } from './components/dialogs/stavka-porudzbine-dialog/stavka-porudzbine-dialog.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     PorudzbinaComponent,
     StavkaPorudzbineComponent,
     ArtiklDialogComponent,
-    PorudzbinaDialogComponent
+    PorudzbinaDialogComponent,
+    DobavljacDialogComponent,
+    StavkaPorudzbineDialogComponent
   ],
   imports: [
     BrowserModule,
