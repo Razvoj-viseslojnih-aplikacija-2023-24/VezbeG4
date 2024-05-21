@@ -35,6 +35,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DobavljacDialogComponent } from './components/dialogs/dobavljac-dialog/dobavljac-dialog.component';
 import { StavkaPorudzbineDialogComponent } from './components/dialogs/stavka-porudzbine-dialog/stavka-porudzbine-dialog.component';
 
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +74,9 @@ import { StavkaPorudzbineDialogComponent } from './components/dialogs/stavka-por
     MatNativeDateModule,
     MatSelectModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

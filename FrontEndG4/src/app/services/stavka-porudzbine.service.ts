@@ -15,6 +15,10 @@ export class StavkaPorudzbineService {
     return this.httpClient.get(`${STAVKA_PORUDZBINE_URL}`);
   }
 
+  public getStavkeByPorudzbina(porudzbinaId:number):Observable<any>{
+    return this.httpClient.get(`${STAVKA_PORUDZBINE_URL}/porudzbina/${porudzbinaId}`);
+  }
+
   public addStavkaPorudzbine(stavkaPorudzbine:StavkaPorudzbine):Observable<any>{
     return this.httpClient.post(`${STAVKA_PORUDZBINE_URL}`, stavkaPorudzbine);
   }
